@@ -1,0 +1,588 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot 1`] = `
+Object {
+  "Outputs": Object {
+    "apiGw": Object {
+      "Description": "URL of the API gateway",
+      "Value": Object {
+        "Fn::Join": Array [
+          "",
+          Array [
+            "https://",
+            Object {
+              "Ref": "apigw7F882D19",
+            },
+            ".execute-api.",
+            Object {
+              "Ref": "AWS::Region",
+            },
+            ".",
+            Object {
+              "Ref": "AWS::URLSuffix",
+            },
+            "/",
+            Object {
+              "Ref": "apigwDeploymentStageprod7B86DEF8",
+            },
+            "/",
+          ],
+        ],
+      },
+    },
+    "apigwEndpoint7CC14640": Object {
+      "Value": Object {
+        "Fn::Join": Array [
+          "",
+          Array [
+            "https://",
+            Object {
+              "Ref": "apigw7F882D19",
+            },
+            ".execute-api.",
+            Object {
+              "Ref": "AWS::Region",
+            },
+            ".",
+            Object {
+              "Ref": "AWS::URLSuffix",
+            },
+            "/",
+            Object {
+              "Ref": "apigwDeploymentStageprod7B86DEF8",
+            },
+            "/",
+          ],
+        ],
+      },
+    },
+  },
+  "Parameters": Object {
+    "AssetParameters137acfba958b6dd34abe443afa390e6c1251278419689b3ba4200da560e9091bArtifactHash752E62C5": Object {
+      "Description": "Artifact hash for asset \\"137acfba958b6dd34abe443afa390e6c1251278419689b3ba4200da560e9091b\\"",
+      "Type": "String",
+    },
+    "AssetParameters137acfba958b6dd34abe443afa390e6c1251278419689b3ba4200da560e9091bS3BucketC2D13503": Object {
+      "Description": "S3 bucket for asset \\"137acfba958b6dd34abe443afa390e6c1251278419689b3ba4200da560e9091b\\"",
+      "Type": "String",
+    },
+    "AssetParameters137acfba958b6dd34abe443afa390e6c1251278419689b3ba4200da560e9091bS3VersionKey99C7371F": Object {
+      "Description": "S3 key for asset version \\"137acfba958b6dd34abe443afa390e6c1251278419689b3ba4200da560e9091b\\"",
+      "Type": "String",
+    },
+    "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24ArtifactHashBA91B77F": Object {
+      "Description": "Artifact hash for asset \\"67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24\\"",
+      "Type": "String",
+    },
+    "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24S3Bucket4D46ABB5": Object {
+      "Description": "S3 bucket for asset \\"67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24\\"",
+      "Type": "String",
+    },
+    "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24S3VersionKeyB0F28861": Object {
+      "Description": "S3 key for asset version \\"67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24\\"",
+      "Type": "String",
+    },
+    "AssetParameters94ce04f9b8d11584dcf34753d7f435b8afb5a827a00fa72011744222f78d9370ArtifactHashE4CE781E": Object {
+      "Description": "Artifact hash for asset \\"94ce04f9b8d11584dcf34753d7f435b8afb5a827a00fa72011744222f78d9370\\"",
+      "Type": "String",
+    },
+    "AssetParameters94ce04f9b8d11584dcf34753d7f435b8afb5a827a00fa72011744222f78d9370S3Bucket4FF41AD9": Object {
+      "Description": "S3 bucket for asset \\"94ce04f9b8d11584dcf34753d7f435b8afb5a827a00fa72011744222f78d9370\\"",
+      "Type": "String",
+    },
+    "AssetParameters94ce04f9b8d11584dcf34753d7f435b8afb5a827a00fa72011744222f78d9370S3VersionKeyAD356AB4": Object {
+      "Description": "S3 key for asset version \\"94ce04f9b8d11584dcf34753d7f435b8afb5a827a00fa72011744222f78d9370\\"",
+      "Type": "String",
+    },
+  },
+  "Resources": Object {
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A": Object {
+      "DependsOn": Array [
+        "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
+        "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24S3Bucket4D46ABB5",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24S3VersionKeyB0F28861",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters67b7823b74bc135986aa72f889d6a8da058d0c4a20cbc2dfc6f78995fdd2fc24S3VersionKeyB0F28861",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Handler": "index.handler",
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
+            "Arn",
+          ],
+        },
+        "Runtime": "nodejs10.x",
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB": Object {
+      "Properties": Object {
+        "PolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": Array [
+                "logs:PutRetentionPolicy",
+                "logs:DeleteRetentionPolicy",
+              ],
+              "Effect": "Allow",
+              "Resource": "*",
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "PolicyName": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
+        "Roles": Array [
+          Object {
+            "Ref": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Policy",
+    },
+    "apigw7F882D19": Object {
+      "Properties": Object {
+        "BinaryMediaTypes": Array [
+          "application/zip",
+          "application/octet-stream",
+        ],
+        "Description": "Converts CSV data to Heartbeat yml files",
+        "Name": "api-gw",
+      },
+      "Type": "AWS::ApiGateway::RestApi",
+    },
+    "apigwAccount87C50226": Object {
+      "DependsOn": Array [
+        "apigw7F882D19",
+      ],
+      "Properties": Object {
+        "CloudWatchRoleArn": Object {
+          "Fn::GetAtt": Array [
+            "apigwCloudWatchRoleA2FD6AF0",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "AWS::ApiGateway::Account",
+    },
+    "apigwCloudWatchRoleA2FD6AF0": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "apigateway.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+    "apigwDeploymentB1C01265e97596d8dfe4a9002b9ab32b463359fd": Object {
+      "DependsOn": Array [
+        "apigwconverterPOSTACD3E997",
+        "apigwconverterA3A5ED0D",
+      ],
+      "Properties": Object {
+        "Description": "Automatically created by the RestApi construct",
+        "RestApiId": Object {
+          "Ref": "apigw7F882D19",
+        },
+      },
+      "Type": "AWS::ApiGateway::Deployment",
+    },
+    "apigwDeploymentStageprod7B86DEF8": Object {
+      "Properties": Object {
+        "DeploymentId": Object {
+          "Ref": "apigwDeploymentB1C01265e97596d8dfe4a9002b9ab32b463359fd",
+        },
+        "RestApiId": Object {
+          "Ref": "apigw7F882D19",
+        },
+        "StageName": "prod",
+      },
+      "Type": "AWS::ApiGateway::Stage",
+    },
+    "apigwconverterA3A5ED0D": Object {
+      "Properties": Object {
+        "ParentId": Object {
+          "Fn::GetAtt": Array [
+            "apigw7F882D19",
+            "RootResourceId",
+          ],
+        },
+        "PathPart": "converter",
+        "RestApiId": Object {
+          "Ref": "apigw7F882D19",
+        },
+      },
+      "Type": "AWS::ApiGateway::Resource",
+    },
+    "apigwconverterPOSTACD3E997": Object {
+      "Properties": Object {
+        "AuthorizationType": "NONE",
+        "HttpMethod": "POST",
+        "Integration": Object {
+          "IntegrationHttpMethod": "POST",
+          "Type": "AWS_PROXY",
+          "Uri": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":apigateway:",
+                Object {
+                  "Ref": "AWS::Region",
+                },
+                ":lambda:path/2015-03-31/functions/",
+                Object {
+                  "Fn::GetAtt": Array [
+                    "fnUpload490DB5AA",
+                    "Arn",
+                  ],
+                },
+                "/invocations",
+              ],
+            ],
+          },
+        },
+        "ResourceId": Object {
+          "Ref": "apigwconverterA3A5ED0D",
+        },
+        "RestApiId": Object {
+          "Ref": "apigw7F882D19",
+        },
+      },
+      "Type": "AWS::ApiGateway::Method",
+    },
+    "apigwconverterPOSTApiPermissionTesttestapigwF38F2ADAPOSTconverterBFEA45FA": Object {
+      "Properties": Object {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": Object {
+          "Fn::GetAtt": Array [
+            "fnUpload490DB5AA",
+            "Arn",
+          ],
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "arn:",
+              Object {
+                "Ref": "AWS::Partition",
+              },
+              ":execute-api:",
+              Object {
+                "Ref": "AWS::Region",
+              },
+              ":",
+              Object {
+                "Ref": "AWS::AccountId",
+              },
+              ":",
+              Object {
+                "Ref": "apigw7F882D19",
+              },
+              "/test-invoke-stage/POST/converter",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "apigwconverterPOSTApiPermissiontestapigwF38F2ADAPOSTconverter9A954521": Object {
+      "Properties": Object {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": Object {
+          "Fn::GetAtt": Array [
+            "fnUpload490DB5AA",
+            "Arn",
+          ],
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "arn:",
+              Object {
+                "Ref": "AWS::Partition",
+              },
+              ":execute-api:",
+              Object {
+                "Ref": "AWS::Region",
+              },
+              ":",
+              Object {
+                "Ref": "AWS::AccountId",
+              },
+              ":",
+              Object {
+                "Ref": "apigw7F882D19",
+              },
+              "/",
+              Object {
+                "Ref": "apigwDeploymentStageprod7B86DEF8",
+              },
+              "/POST/converter",
+            ],
+          ],
+        },
+      },
+      "Type": "AWS::Lambda::Permission",
+    },
+    "csvheartbeatconverterlayerD54999B6": Object {
+      "Properties": Object {
+        "CompatibleRuntimes": Array [
+          "ruby2.7",
+        ],
+        "Content": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParameters137acfba958b6dd34abe443afa390e6c1251278419689b3ba4200da560e9091bS3BucketC2D13503",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters137acfba958b6dd34abe443afa390e6c1251278419689b3ba4200da560e9091bS3VersionKey99C7371F",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters137acfba958b6dd34abe443afa390e6c1251278419689b3ba4200da560e9091bS3VersionKey99C7371F",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Description": "Provides ruby libraries for the csv converter",
+      },
+      "Type": "AWS::Lambda::LayerVersion",
+    },
+    "fnUpload490DB5AA": Object {
+      "DependsOn": Array [
+        "fnUploadServiceRole07BB0591",
+      ],
+      "Properties": Object {
+        "Code": Object {
+          "S3Bucket": Object {
+            "Ref": "AssetParameters94ce04f9b8d11584dcf34753d7f435b8afb5a827a00fa72011744222f78d9370S3Bucket4FF41AD9",
+          },
+          "S3Key": Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                Object {
+                  "Fn::Select": Array [
+                    0,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters94ce04f9b8d11584dcf34753d7f435b8afb5a827a00fa72011744222f78d9370S3VersionKeyAD356AB4",
+                        },
+                      ],
+                    },
+                  ],
+                },
+                Object {
+                  "Fn::Select": Array [
+                    1,
+                    Object {
+                      "Fn::Split": Array [
+                        "||",
+                        Object {
+                          "Ref": "AssetParameters94ce04f9b8d11584dcf34753d7f435b8afb5a827a00fa72011744222f78d9370S3VersionKeyAD356AB4",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+        "Description": "Converts CSV data and returns a zipped archive",
+        "Handler": "main.handler",
+        "Layers": Array [
+          Object {
+            "Ref": "csvheartbeatconverterlayerD54999B6",
+          },
+        ],
+        "MemorySize": 256,
+        "Role": Object {
+          "Fn::GetAtt": Array [
+            "fnUploadServiceRole07BB0591",
+            "Arn",
+          ],
+        },
+        "Runtime": "ruby2.7",
+        "Timeout": 60,
+      },
+      "Type": "AWS::Lambda::Function",
+    },
+    "fnUploadLogRetention9E9120F4": Object {
+      "Properties": Object {
+        "LogGroupName": Object {
+          "Fn::Join": Array [
+            "",
+            Array [
+              "/aws/lambda/",
+              Object {
+                "Ref": "fnUpload490DB5AA",
+              },
+            ],
+          ],
+        },
+        "RetentionInDays": 7,
+        "ServiceToken": Object {
+          "Fn::GetAtt": Array [
+            "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
+            "Arn",
+          ],
+        },
+      },
+      "Type": "Custom::LogRetention",
+    },
+    "fnUploadServiceRole07BB0591": Object {
+      "Properties": Object {
+        "AssumeRolePolicyDocument": Object {
+          "Statement": Array [
+            Object {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": Object {
+                "Service": "lambda.amazonaws.com",
+              },
+            },
+          ],
+          "Version": "2012-10-17",
+        },
+        "ManagedPolicyArns": Array [
+          Object {
+            "Fn::Join": Array [
+              "",
+              Array [
+                "arn:",
+                Object {
+                  "Ref": "AWS::Partition",
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+              ],
+            ],
+          },
+        ],
+      },
+      "Type": "AWS::IAM::Role",
+    },
+  },
+}
+`;

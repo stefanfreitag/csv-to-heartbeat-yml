@@ -1,0 +1,52 @@
+- type: tcp
+  id: tcp-<%= environment.downcase %>-<%= team.downcase %>-<%= application.downcase %>-<%= service.downcase %>
+  name: <%= environment.downcase %>-<%= application.downcase %>-<%= service.downcase %>
+  schedule: '@every <%= schedule %>s'
+
+  # configure hosts to ping.
+  # Entries can be:
+  #   - plain host name or IP like `localhost`:
+  #       Requires ports configs to be checked. If ssl is configured,
+  #       a SSL/TLS based connection will be established. Otherwise plain tcp connection
+  #       will be established
+  #   - hostname + port like `localhost:12345`:
+  #       Connect to port on given host. If ssl is configured,
+  #       a SSL/TLS based connection will be established. Otherwise plain tcp connection
+  #       will be established
+  #   - full url syntax. `scheme://<host>:[port]`. The `<scheme>` can be one of
+  #     `tcp`, `plain`, `ssl` and `tls`. If `tcp`, `plain` is configured, a plain
+  #     tcp connection will be established, even if ssl is configured.
+  #     Using `tls`/`ssl`, an SSL connection is established. If no ssl is configured,
+  #     system defaults will be used (not supported on windows).
+  #     If `port` is missing in url, the ports setting is required.
+  hosts: [ <%= endpoints.downcase.split(',').uniq.join(',').gsub(/[^,]+/, "'\\0'") %> ]
+
+  ipv4: true
+
+  # Total test connection and data exchange timeout
+  timeout: <%= timeout %>s
+
+  # Optional payload string to send to remote and expected answer. If none is
+  # configured, the endpoint is expected to be up if connection attempt was
+  # successful. If only `send_string` is configured, any response will be
+  # accepted as ok. If only `receive_string` is configured, no payload will be
+  # send, but client expects to receive expected payload on connect.
+  #check:
+  #send: ''
+  #receive: ''
+
+  # Required TLS protocols
+  #supported_protocols: ["TLSv1.0", "TLSv1.1", "TLSv1.2"]
+  # The tags of the monitors are included in their own field with each
+  # transaction published. Tags make it easy to group servers by different
+  # logical properties.
+  #tags: ["service-X", "web-tier"]
+
+  # Optional fields that you can specify to add additional information to the
+  # monitor output. Fields can be scalar values, arrays, dictionaries, or any nested
+  # combination of these.
+  fields:
+    team: <%= team.upcase%>
+    environment: <%= environment.upcase %>
+    application: <%= application.upcase %>
+    service: <%= service.upcase %>
