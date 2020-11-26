@@ -150,4 +150,4 @@ def handler(event:, context:)
   {'isBase64Encoded': true, 'statusCode': 200, body: encoded, headers: {'content-type': 'application/zip', 'content-encoding': 'base64'}}
 end
 
-local_execution("../data.csv")
+#local_execution("../data.csv")

@@ -1,7 +1,7 @@
 - type: http
   id: http-<%= environment.downcase %>-<%= team.downcase %>-<%= application.downcase %>-<%= service.downcase %>
 
-  name: <%= application.downcase %> <%= service.downcase %>
+  name: <%= application.downcase %>-<%= service.downcase %>
   schedule: '@every <%= schedule %>s'
   hosts: [ <%= endpoints.downcase.split(',').uniq.join(',').gsub(/[^,]+/, "'\\0'") %> ]
   ipv4: true

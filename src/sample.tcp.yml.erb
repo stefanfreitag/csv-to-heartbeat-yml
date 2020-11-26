@@ -1,6 +1,6 @@
 - type: tcp
   id: tcp-<%= environment.downcase %>-<%= team.downcase %>-<%= application.downcase %>-<%= service.downcase %>
-  name: <%= application.downcase %> <%= service.downcase %>
+  name: <%= application.downcase %>-<%= service.downcase %>
   schedule: '@every <%= schedule %>s'
 
   # configure hosts to ping.
