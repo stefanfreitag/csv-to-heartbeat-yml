@@ -55,13 +55,14 @@ end
 # @param [String] environment The environment. E.g. Production, Staging, Test
 # @param [Integer] timeout Timeout in seconds
 # @param [Integer] schedule Schedule in seconds
-def render(application:, endpoints:, environment:, schedule:, service:, renderer:, team:, timeout:)
+def render(application:, endpoints:, environment:, schedule:, service:, renderer:, team:, timeout:, tags:)
   renderer.result_with_hash(
     team: team,
     application: application,
     environment: environment,
     service: service,
     endpoints: endpoints,
+    tags: tags,
     schedule: schedule,
     timeout: timeout
   )
@@ -82,8 +83,9 @@ def process_csv_data(table)
     environment = row [3]
     service = row[4]
     endpoints = row[5]
-    schedule = row[6]
-    timeout = row[7]
+    tags = row[6] == nil ? '' : row[6]
+    schedule = row[7]
+    timeout = row[8]
 
     if type.eql? 'http'
       renderer = http_check_erb_renderer
@@ -95,7 +97,7 @@ def process_csv_data(table)
       puts 'Skipped row: ' + row.to_csv
       next
     end
-    result = render(application: application, endpoints: endpoints, environment: environment, schedule: schedule, service: service, renderer: renderer, team: team, timeout: timeout)
+    result = render(application: application, endpoints: endpoints, environment: environment, schedule: schedule, service: service, renderer: renderer, team: team, timeout: timeout, tags:tags)
 
     output_directory = '/tmp/monitors/'
     FileUtils.mkdir_p output_directory
@@ -147,3 +149,5 @@ def handler(event:, context:)
   encoded = Base64.strict_encode64(data)
   {'isBase64Encoded': true, 'statusCode': 200, body: encoded, headers: {'content-type': 'application/zip', 'content-encoding': 'base64'}}
 end
+
+local_execution("../data.csv")

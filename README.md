@@ -1,22 +1,25 @@
 # Convert CVS file to HeartBeat configuration files
 
+I was working on the installation and configuration of Elasti.co [Heartbeat](https://www.elastic.co/guide/en/beats/heartbeat/current/heartbeat-overview.html) and found
+it quite boring to create the required YAML files for all the services that required monitoring. Hence I decided to automate this tasks:
+
+- As input a CSV file is used. The first row  of this file is treated as header. Its format is
+
+   | Column  |  Meaning |
+   | --- | --- |
+   | 0 |  Type of check (either `tcp` or `http`) |
+   | 1 |  Name of support unit (team owning the monitored service, can be used for alarming)|
+   | 2 | Name of application |
+   | 3 | Environment (e.g. production, staging, test, development) |
+   | 4 | Name of service |
+   | 5 | Endpoints to monitor (comma-separated) |
+   | 6 | Tags (comma-separated) |
+   | 7 | Schedule in seconds|
+   | 8 | Check timeout in seconds|
+
+- The output is a zip archive containing all the YAML files for the services.
+
 ## Installation
-
-### Preparing the Lambda layer
-
-The [Lambda](https://aws.amazon.com/lambda/) layer contains these libraries
-
-- [rubyzip](https://github.com/rubyzip/rubyzip)
-- csv
-
-```sh
-$ cd src
-$ mkdir -p ../vendor/bundle
-$ bundle config set path ../vendor/bundle
-$ bundle install
-[...]
-Bundled gems are installed into `../vendor/bundle`
-```
 
 ## Deploy/ Undeploy the application
 

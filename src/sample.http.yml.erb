@@ -1,7 +1,7 @@
 - type: http
   id: http-<%= environment.downcase %>-<%= team.downcase %>-<%= application.downcase %>-<%= service.downcase %>
 
-  name: <%= environment.downcase %>-<%= application.downcase %>-<%= service.downcase %>
+  name: <%= application.downcase %> <%= service.downcase %>
   schedule: '@every <%= schedule %>s'
   hosts: [ <%= endpoints.downcase.split(',').uniq.join(',').gsub(/[^,]+/, "'\\0'") %> ]
   ipv4: true
@@ -10,7 +10,10 @@
   #check.request:
   # Configure HTTP method to use. Only 'HEAD', 'GET' and 'POST' methods are allowed.
   method: "GET"
-
+  
+  response.include_body: always
+  response.include_body_max_bytes: 2048
+  
   # Expected response settings
   check.response:
     # Expected status code. If not configured or set to 0 any status code not
@@ -27,7 +30,7 @@
   # The tags of the monitors are included in their own field with each
   # transaction published. Tags make it easy to group servers by different
   # logical properties.
-  #tags: ["service-X", "web-tier"]
+  tags: [<%= tags.downcase.split(',').uniq.join(',').gsub(/[^,]+/, "'\\0'") %>]
 
   # Optional fields that you can specify to add additional information to the
   # monitor output. Fields can be scalar values, arrays, dictionaries, or any nested
