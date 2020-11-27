@@ -18,22 +18,10 @@ it quite boring to create the required YAML files for all the services that requ
    | 8 | Check timeout in seconds|
 
 - The output is a zip archive containing all the YAML files for the services.
+  After unzipping the archive the YAML files may require an update on ownership (to the user running heartbeat) and permissions (0x644).
 
 ## Installation
 
-## Deploy/ Undeploy the application
-
-```sh
-$ cd cdk
-$ npm install
-$ npm run build
-
-# Deploying the stack
-$cdk deploy --profile <AWS Profile>
-
-#  Undeploying the stack
-$ cdk destroy --profile <AWS Profile>
-```
 
 ## Uploading the CSV data using curl
 

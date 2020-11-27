@@ -1,6 +1,6 @@
 - type: tcp
   id: tcp-<%= environment.downcase %>-<%= team.downcase %>-<%= application.downcase %>-<%= service.downcase %>
-  name: <%= application.downcase %>-<%= service.downcase %>
+  name: <%= application.downcase %> <%= service.downcase %>
   schedule: '@every <%= schedule %>s'
 
   # configure hosts to ping.
@@ -50,3 +50,8 @@
     environment: <%= environment.upcase %>
     application: <%= application.upcase %>
     service: <%= service.upcase %>
+
+  # If this option is set to true, the custom fields are stored as top-level
+  # fields in the output document instead of being grouped under a fields
+  # sub-dictionary. Default is false.
+  fields_under_root: true

@@ -1,6 +1,6 @@
 # CDK App
 
-This CDK application deployed the Ruby application as a Lambda function and makes it 
+This CDK application deploys the Ruby application as a Lambda function and makes it
 available via an API Gateway.
 
 ## Preparing the Lambda layer
@@ -18,3 +18,25 @@ $ bundle install
 [...]
 Bundled gems are installed into `../vendor/bundle`
 ```
+
+## Deploy/ Undeploy the application
+
+- Installing all dependencies required to build the CDK application.
+
+  ```sh
+  cd cdk
+  npm install
+  npm run build
+  ```
+
+- Deploying the stack
+
+  ```sh
+  cdk deploy --profile <AWS Profile>
+  ```
+
+- Undeploying the stack
+  
+  ```sh
+  cdk destroy --profile <AWS Profile>
+  ```
