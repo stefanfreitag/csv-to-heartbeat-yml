@@ -33,6 +33,14 @@
       ],
       "condition": "git diff --exit-code > /dev/null"
     },
+    "install-layer-dependencies": {
+      "name": "install-layer-dependencies",
+      "steps": [
+        {
+          "exec": "chmod o+x ./installLayerDependencies.sh;sh ./installLayerDependencies.sh"
+        }
+      ]
+    },
     "bump": {
       "name": "bump",
       "category": "20.release",
