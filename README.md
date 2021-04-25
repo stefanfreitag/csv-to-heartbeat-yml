@@ -20,16 +20,61 @@ it quite boring to create the required YAML files for all the services that requ
 - The output is a zip archive containing all the YAML files for the services.
   After unzipping the archive the YAML files may require an update on ownership (to the user running heartbeat) and permissions (0x644).
 
-## Installation
+## Deploying the CDK stack
 
+This [CDK](https://github.com/aws/aws-cdk) application deploys the [Ruby](https://www.ruby-lang.org/en/) application as a [Lambda](https://aws.amazon.com/lambda/) function and makes it available via an [API Gateway](https://aws.amazon.com/api-gateway/).
 
-## Uploading the CSV data using curl
+### Preparing the Lambda layer
+
+The [Lambda](https://aws.amazon.com/lambda/) layer contains these libraries
+
+- [rubyzip](https://github.com/rubyzip/rubyzip)
+- csv
+
+```bash
+$ cd assets
+$ mkdir -p ./vendor/bundle
+$ bundle config set path ./vendor/bundle
+$ bundle install
+
+Fetching gem metadata from https://rubygems.org/..
+Resolving dependencies...
+Using bundler 2.1.4
+Using csv 3.1.9
+Using rubyzip 2.3.0
+Bundle complete! 2 Gemfile dependencies, 3 gems now installed.
+Bundled gems are installed into `./vendor/bundle`
+```
+
+## Deploy/ Undeploy the application
+
+- Installing all dependencies required to build the CDK application.
+
+  ```bash
+  $ npm install
+  $ npm run build
+  ```
+
+- Deploying the stack
+
+  ```bash
+  $ cdk deploy --profile <AWS Profile>
+  ```
+
+- Undeploying the stack
+  
+  ```bassh
+  $ cdk destroy --profile <AWS Profile>
+  ```
+
+## Usage
 
 The CSV file containing the information can be uploaded e.g. via curl.
 
 ```sh
 curl -X POST --data-binary @data.csv -H 'Content-Type:text/csv' https://<api-gateway>.eu-central-1.amazonaws.com/prod/converter --output test.zip
 ```
+
 
 ## Links
 
