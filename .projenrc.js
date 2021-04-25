@@ -1,7 +1,7 @@
 const { AwsCdkTypeScriptApp } = require('projen');
 
 const project = new AwsCdkTypeScriptApp({
-  cdkVersion: '1.98.0',
+  cdkVersion: '1.100.0',
   name: 'cdk',
   cdkDependencies: [
     '@aws-cdk/aws-apigateway',
@@ -15,4 +15,6 @@ const project = new AwsCdkTypeScriptApp({
   defaultReleaseBranch: 'master',
 });
 
+project.npmignore.exclude('data.csv', 'assets/vendor/*');
+project.gitignore.exclude('data.csv', 'assets/vendor/*');
 project.synth();

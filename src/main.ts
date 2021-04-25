@@ -30,7 +30,7 @@ export class MyStack extends Stack {
     return new LayerVersion(this, 'csv-heartbeat-converter-layer', {
       compatibleRuntimes: [Runtime.RUBY_2_7],
       description: 'Provides ruby libraries for the csv converter',
-      code: Code.fromAsset('../vendor/bundle/'),
+      code: Code.fromAsset('./assets/vendor/bundle/'),
     });
   }
   private createFunction(layer: LayerVersion) {
@@ -38,7 +38,7 @@ export class MyStack extends Stack {
       runtime: Runtime.RUBY_2_7,
       description: 'Converts CSV data and returns a zipped archive',
       handler: 'main.handler',
-      code: Code.fromAsset('../src'),
+      code: Code.fromAsset('./assets'),
       timeout: Duration.minutes(1),
       memorySize: 256,
       layers: [layer],
