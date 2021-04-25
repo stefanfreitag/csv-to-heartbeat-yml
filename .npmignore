@@ -14,9 +14,7 @@
 /tsconfig.eslint.json
 /tsconfig.jest.json
 /tsconfig.json
-assets/vendor/*
 cdk.out/
-data.csv
 dist
 junit.xml
 !/lib

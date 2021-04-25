@@ -18,11 +18,9 @@
 /dist
 /lib
 /test-reports/
-assets/vendor/*
 build/Release
 cdk.out/
 coverage
-data.csv
 jspm_packages/
 junit.xml
 lerna-debug.log*
