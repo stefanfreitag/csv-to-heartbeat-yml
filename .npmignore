@@ -14,9 +14,12 @@
 /tsconfig.eslint.json
 /tsconfig.jest.json
 /tsconfig.json
+assets/vendor/*
 cdk.out/
+data.csv
 dist
 junit.xml
+tsconfig.tsbuildinfo
 !/lib
 !/lib/**/*.d.ts
 !/lib/**/*.js
