@@ -1,7 +1,8 @@
-import { LambdaRestApi } from '@aws-cdk/aws-apigateway';
-import { Code, Function, LayerVersion, Runtime } from '@aws-cdk/aws-lambda';
-import { RetentionDays } from '@aws-cdk/aws-logs';
-import { App, CfnOutput, Construct, Duration, Stack, StackProps } from '@aws-cdk/core';
+import { App, CfnOutput, Duration, Stack, StackProps } from 'aws-cdk-lib';
+import { LambdaRestApi } from 'aws-cdk-lib/aws-apigateway';
+import { Code, Function, LayerVersion, Runtime } from 'aws-cdk-lib/aws-lambda';
+import { RetentionDays } from 'aws-cdk-lib/aws-logs';
+import { Construct } from 'constructs';
 export class MyStack extends Stack {
   constructor(scope: Construct, id: string, props: StackProps = {}) {
     super(scope, id, props);

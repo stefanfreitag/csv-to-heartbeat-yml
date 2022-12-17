@@ -11,6 +11,6 @@ const project = new awscdk.AwsCdkTypeScriptApp({
   defaultReleaseBranch: 'master',
 });
 
-project.npmignore.exclude('data.csv', 'assets/vendor/*','.history');
-project.gitignore.exclude('data.csv', 'assets/vendor/*','.history');
+project.npmignore.exclude('data.csv', 'assets/vendor/*', '.history');
+project.gitignore.exclude('data.csv', 'assets/vendor/*', '.history');
 project.synth();
