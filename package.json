@@ -1,6 +1,5 @@
 {
-  "name": "cdk",
-  "description": "Converts CSV data to heartbeat yml files.",
+  "name": "csv_to_heartbeat",
   "scripts": {
     "build": "npx projen build",
     "bundle": "npx projen bundle",
@@ -26,7 +25,7 @@
   },
   "author": {
     "name": "Stefan Freitag",
-    "email": "stefan.freitag@ud.edu",
+    "email": "stefan.freitag@udo.edu",
     "organization": false
   },
   "devDependencies": {
