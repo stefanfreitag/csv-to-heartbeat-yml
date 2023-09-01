@@ -1,131 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Snapshot 1`] = `
-Object {
-  "Mappings": Object {
-    "DefaultCrNodeVersionMap": Object {
-      "af-south-1": Object {
-        "value": "nodejs16.x",
-      },
-      "ap-east-1": Object {
-        "value": "nodejs16.x",
-      },
-      "ap-northeast-1": Object {
-        "value": "nodejs16.x",
-      },
-      "ap-northeast-2": Object {
-        "value": "nodejs16.x",
-      },
-      "ap-northeast-3": Object {
-        "value": "nodejs16.x",
-      },
-      "ap-south-1": Object {
-        "value": "nodejs16.x",
-      },
-      "ap-south-2": Object {
-        "value": "nodejs16.x",
-      },
-      "ap-southeast-1": Object {
-        "value": "nodejs16.x",
-      },
-      "ap-southeast-2": Object {
-        "value": "nodejs16.x",
-      },
-      "ap-southeast-3": Object {
-        "value": "nodejs16.x",
-      },
-      "ca-central-1": Object {
-        "value": "nodejs16.x",
-      },
-      "cn-north-1": Object {
-        "value": "nodejs16.x",
-      },
-      "cn-northwest-1": Object {
-        "value": "nodejs16.x",
-      },
-      "eu-central-1": Object {
-        "value": "nodejs16.x",
-      },
-      "eu-central-2": Object {
-        "value": "nodejs16.x",
-      },
-      "eu-north-1": Object {
-        "value": "nodejs16.x",
-      },
-      "eu-south-1": Object {
-        "value": "nodejs16.x",
-      },
-      "eu-south-2": Object {
-        "value": "nodejs16.x",
-      },
-      "eu-west-1": Object {
-        "value": "nodejs16.x",
-      },
-      "eu-west-2": Object {
-        "value": "nodejs16.x",
-      },
-      "eu-west-3": Object {
-        "value": "nodejs16.x",
-      },
-      "me-central-1": Object {
-        "value": "nodejs16.x",
-      },
-      "me-south-1": Object {
-        "value": "nodejs16.x",
-      },
-      "sa-east-1": Object {
-        "value": "nodejs16.x",
-      },
-      "us-east-1": Object {
-        "value": "nodejs16.x",
-      },
-      "us-east-2": Object {
-        "value": "nodejs16.x",
-      },
-      "us-gov-east-1": Object {
-        "value": "nodejs16.x",
-      },
-      "us-gov-west-1": Object {
-        "value": "nodejs16.x",
-      },
-      "us-iso-east-1": Object {
-        "value": "nodejs14.x",
-      },
-      "us-iso-west-1": Object {
-        "value": "nodejs14.x",
-      },
-      "us-isob-east-1": Object {
-        "value": "nodejs14.x",
-      },
-      "us-west-1": Object {
-        "value": "nodejs16.x",
-      },
-      "us-west-2": Object {
-        "value": "nodejs16.x",
-      },
-    },
-  },
-  "Outputs": Object {
-    "apiGw": Object {
+{
+  "Outputs": {
+    "apiGw": {
       "Description": "URL of the API gateway",
-      "Value": Object {
-        "Fn::Join": Array [
+      "Value": {
+        "Fn::Join": [
           "",
-          Array [
+          [
             "https://",
-            Object {
+            {
               "Ref": "apigw7F882D19",
             },
             ".execute-api.",
-            Object {
+            {
               "Ref": "AWS::Region",
             },
             ".",
-            Object {
+            {
               "Ref": "AWS::URLSuffix",
             },
             "/",
-            Object {
+            {
               "Ref": "apigwDeploymentStageprod7B86DEF8",
             },
             "/",
@@ -133,25 +30,25 @@ Object {
         ],
       },
     },
-    "apigwEndpoint7CC14640": Object {
-      "Value": Object {
-        "Fn::Join": Array [
+    "apigwEndpoint7CC14640": {
+      "Value": {
+        "Fn::Join": [
           "",
-          Array [
+          [
             "https://",
-            Object {
+            {
               "Ref": "apigw7F882D19",
             },
             ".execute-api.",
-            Object {
+            {
               "Ref": "AWS::Region",
             },
             ".",
-            Object {
+            {
               "Ref": "AWS::URLSuffix",
             },
             "/",
-            Object {
+            {
               "Ref": "apigwDeploymentStageprod7B86DEF8",
             },
             "/",
@@ -160,66 +57,58 @@ Object {
       },
     },
   },
-  "Parameters": Object {
-    "BootstrapVersion": Object {
+  "Parameters": {
+    "BootstrapVersion": {
       "Default": "/cdk-bootstrap/hnb659fds/version",
       "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
       "Type": "AWS::SSM::Parameter::Value<String>",
     },
   },
-  "Resources": Object {
-    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A": Object {
-      "DependsOn": Array [
+  "Resources": {
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A": {
+      "DependsOn": [
         "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
         "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
       ],
-      "Properties": Object {
-        "Code": Object {
-          "S3Bucket": Object {
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "5fa1330271b8967d9254ba2d4a07144f8acefe8b77e6d6bba38261373a50d5f8.zip",
+          "S3Key": "5cc92ed0cea39e2b8de2dbc527dfb5980a3af9564bd1084d840b9787c7d0467e.zip",
         },
         "Handler": "index.handler",
-        "Role": Object {
-          "Fn::GetAtt": Array [
+        "Role": {
+          "Fn::GetAtt": [
             "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
             "Arn",
           ],
         },
-        "Runtime": Object {
-          "Fn::FindInMap": Array [
-            "DefaultCrNodeVersionMap",
-            Object {
-              "Ref": "AWS::Region",
-            },
-            "value",
-          ],
-        },
+        "Runtime": "nodejs18.x",
       },
       "Type": "AWS::Lambda::Function",
     },
-    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB": Object {
-      "Properties": Object {
-        "AssumeRolePolicyDocument": Object {
-          "Statement": Array [
-            Object {
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Principal": Object {
+              "Principal": {
                 "Service": "lambda.amazonaws.com",
               },
             },
           ],
           "Version": "2012-10-17",
         },
-        "ManagedPolicyArns": Array [
-          Object {
-            "Fn::Join": Array [
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
               "",
-              Array [
+              [
                 "arn:",
-                Object {
+                {
                   "Ref": "AWS::Partition",
                 },
                 ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
@@ -230,12 +119,12 @@ Object {
       },
       "Type": "AWS::IAM::Role",
     },
-    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB": Object {
-      "Properties": Object {
-        "PolicyDocument": Object {
-          "Statement": Array [
-            Object {
-              "Action": Array [
+    "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB": {
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
                 "logs:PutRetentionPolicy",
                 "logs:DeleteRetentionPolicy",
               ],
@@ -246,17 +135,17 @@ Object {
           "Version": "2012-10-17",
         },
         "PolicyName": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRoleDefaultPolicyADDA7DEB",
-        "Roles": Array [
-          Object {
+        "Roles": [
+          {
             "Ref": "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aServiceRole9741ECFB",
           },
         ],
       },
       "Type": "AWS::IAM::Policy",
     },
-    "apigw7F882D19": Object {
-      "Properties": Object {
-        "BinaryMediaTypes": Array [
+    "apigw7F882D19": {
+      "Properties": {
+        "BinaryMediaTypes": [
           "application/zip",
           "application/octet-stream",
         ],
@@ -265,14 +154,14 @@ Object {
       },
       "Type": "AWS::ApiGateway::RestApi",
     },
-    "apigwAccount87C50226": Object {
+    "apigwAccount87C50226": {
       "DeletionPolicy": "Retain",
-      "DependsOn": Array [
+      "DependsOn": [
         "apigw7F882D19",
       ],
-      "Properties": Object {
-        "CloudWatchRoleArn": Object {
-          "Fn::GetAtt": Array [
+      "Properties": {
+        "CloudWatchRoleArn": {
+          "Fn::GetAtt": [
             "apigwCloudWatchRoleA2FD6AF0",
             "Arn",
           ],
@@ -281,28 +170,28 @@ Object {
       "Type": "AWS::ApiGateway::Account",
       "UpdateReplacePolicy": "Retain",
     },
-    "apigwCloudWatchRoleA2FD6AF0": Object {
+    "apigwCloudWatchRoleA2FD6AF0": {
       "DeletionPolicy": "Retain",
-      "Properties": Object {
-        "AssumeRolePolicyDocument": Object {
-          "Statement": Array [
-            Object {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Principal": Object {
+              "Principal": {
                 "Service": "apigateway.amazonaws.com",
               },
             },
           ],
           "Version": "2012-10-17",
         },
-        "ManagedPolicyArns": Array [
-          Object {
-            "Fn::Join": Array [
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
               "",
-              Array [
+              [
                 "arn:",
-                Object {
+                {
                   "Ref": "AWS::Partition",
                 },
                 ":iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs",
@@ -314,71 +203,71 @@ Object {
       "Type": "AWS::IAM::Role",
       "UpdateReplacePolicy": "Retain",
     },
-    "apigwDeploymentB1C01265e97596d8dfe4a9002b9ab32b463359fd": Object {
-      "DependsOn": Array [
+    "apigwDeploymentB1C01265e97596d8dfe4a9002b9ab32b463359fd": {
+      "DependsOn": [
         "apigwconverterPOSTACD3E997",
         "apigwconverterA3A5ED0D",
       ],
-      "Properties": Object {
+      "Properties": {
         "Description": "Converts CSV data to Heartbeat yml files",
-        "RestApiId": Object {
+        "RestApiId": {
           "Ref": "apigw7F882D19",
         },
       },
       "Type": "AWS::ApiGateway::Deployment",
     },
-    "apigwDeploymentStageprod7B86DEF8": Object {
-      "DependsOn": Array [
+    "apigwDeploymentStageprod7B86DEF8": {
+      "DependsOn": [
         "apigwAccount87C50226",
       ],
-      "Properties": Object {
-        "DeploymentId": Object {
+      "Properties": {
+        "DeploymentId": {
           "Ref": "apigwDeploymentB1C01265e97596d8dfe4a9002b9ab32b463359fd",
         },
-        "RestApiId": Object {
+        "RestApiId": {
           "Ref": "apigw7F882D19",
         },
         "StageName": "prod",
       },
       "Type": "AWS::ApiGateway::Stage",
     },
-    "apigwconverterA3A5ED0D": Object {
-      "Properties": Object {
-        "ParentId": Object {
-          "Fn::GetAtt": Array [
+    "apigwconverterA3A5ED0D": {
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
             "apigw7F882D19",
             "RootResourceId",
           ],
         },
         "PathPart": "converter",
-        "RestApiId": Object {
+        "RestApiId": {
           "Ref": "apigw7F882D19",
         },
       },
       "Type": "AWS::ApiGateway::Resource",
     },
-    "apigwconverterPOSTACD3E997": Object {
-      "Properties": Object {
+    "apigwconverterPOSTACD3E997": {
+      "Properties": {
         "AuthorizationType": "NONE",
         "HttpMethod": "POST",
-        "Integration": Object {
+        "Integration": {
           "IntegrationHttpMethod": "POST",
           "Type": "AWS_PROXY",
-          "Uri": Object {
-            "Fn::Join": Array [
+          "Uri": {
+            "Fn::Join": [
               "",
-              Array [
+              [
                 "arn:",
-                Object {
+                {
                   "Ref": "AWS::Partition",
                 },
                 ":apigateway:",
-                Object {
+                {
                   "Ref": "AWS::Region",
                 },
                 ":lambda:path/2015-03-31/functions/",
-                Object {
-                  "Fn::GetAtt": Array [
+                {
+                  "Fn::GetAtt": [
                     "fnUpload490DB5AA",
                     "Arn",
                   ],
@@ -388,43 +277,43 @@ Object {
             ],
           },
         },
-        "ResourceId": Object {
+        "ResourceId": {
           "Ref": "apigwconverterA3A5ED0D",
         },
-        "RestApiId": Object {
+        "RestApiId": {
           "Ref": "apigw7F882D19",
         },
       },
       "Type": "AWS::ApiGateway::Method",
     },
-    "apigwconverterPOSTApiPermissionTesttestapigwF38F2ADAPOSTconverterBFEA45FA": Object {
-      "Properties": Object {
+    "apigwconverterPOSTApiPermissionTesttestapigwF38F2ADAPOSTconverterBFEA45FA": {
+      "Properties": {
         "Action": "lambda:InvokeFunction",
-        "FunctionName": Object {
-          "Fn::GetAtt": Array [
+        "FunctionName": {
+          "Fn::GetAtt": [
             "fnUpload490DB5AA",
             "Arn",
           ],
         },
         "Principal": "apigateway.amazonaws.com",
-        "SourceArn": Object {
-          "Fn::Join": Array [
+        "SourceArn": {
+          "Fn::Join": [
             "",
-            Array [
+            [
               "arn:",
-              Object {
+              {
                 "Ref": "AWS::Partition",
               },
               ":execute-api:",
-              Object {
+              {
                 "Ref": "AWS::Region",
               },
               ":",
-              Object {
+              {
                 "Ref": "AWS::AccountId",
               },
               ":",
-              Object {
+              {
                 "Ref": "apigw7F882D19",
               },
               "/test-invoke-stage/POST/converter",
@@ -434,38 +323,38 @@ Object {
       },
       "Type": "AWS::Lambda::Permission",
     },
-    "apigwconverterPOSTApiPermissiontestapigwF38F2ADAPOSTconverter9A954521": Object {
-      "Properties": Object {
+    "apigwconverterPOSTApiPermissiontestapigwF38F2ADAPOSTconverter9A954521": {
+      "Properties": {
         "Action": "lambda:InvokeFunction",
-        "FunctionName": Object {
-          "Fn::GetAtt": Array [
+        "FunctionName": {
+          "Fn::GetAtt": [
             "fnUpload490DB5AA",
             "Arn",
           ],
         },
         "Principal": "apigateway.amazonaws.com",
-        "SourceArn": Object {
-          "Fn::Join": Array [
+        "SourceArn": {
+          "Fn::Join": [
             "",
-            Array [
+            [
               "arn:",
-              Object {
+              {
                 "Ref": "AWS::Partition",
               },
               ":execute-api:",
-              Object {
+              {
                 "Ref": "AWS::Region",
               },
               ":",
-              Object {
+              {
                 "Ref": "AWS::AccountId",
               },
               ":",
-              Object {
+              {
                 "Ref": "apigw7F882D19",
               },
               "/",
-              Object {
+              {
                 "Ref": "apigwDeploymentStageprod7B86DEF8",
               },
               "/POST/converter",
@@ -475,13 +364,13 @@ Object {
       },
       "Type": "AWS::Lambda::Permission",
     },
-    "csvheartbeatconverterlayerD54999B6": Object {
-      "Properties": Object {
-        "CompatibleRuntimes": Array [
+    "csvheartbeatconverterlayerD54999B6": {
+      "Properties": {
+        "CompatibleRuntimes": [
           "ruby2.7",
         ],
-        "Content": Object {
-          "S3Bucket": Object {
+        "Content": {
+          "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
           "S3Key": "8c13029074e0c75b1dfc9b878e703096b012aec6f3c1ee40e618bfe09310eadf.zip",
@@ -490,27 +379,27 @@ Object {
       },
       "Type": "AWS::Lambda::LayerVersion",
     },
-    "fnUpload490DB5AA": Object {
-      "DependsOn": Array [
+    "fnUpload490DB5AA": {
+      "DependsOn": [
         "fnUploadServiceRole07BB0591",
       ],
-      "Properties": Object {
-        "Code": Object {
-          "S3Bucket": Object {
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
           "S3Key": "258385ba9e7339f003b802c4d37057cfadf03c6534c5f1e4403e255a710c8961.zip",
         },
         "Description": "Converts CSV data and returns a zipped archive",
         "Handler": "main.handler",
-        "Layers": Array [
-          Object {
+        "Layers": [
+          {
             "Ref": "csvheartbeatconverterlayerD54999B6",
           },
         ],
         "MemorySize": 256,
-        "Role": Object {
-          "Fn::GetAtt": Array [
+        "Role": {
+          "Fn::GetAtt": [
             "fnUploadServiceRole07BB0591",
             "Arn",
           ],
@@ -520,22 +409,22 @@ Object {
       },
       "Type": "AWS::Lambda::Function",
     },
-    "fnUploadLogRetention9E9120F4": Object {
-      "Properties": Object {
-        "LogGroupName": Object {
-          "Fn::Join": Array [
+    "fnUploadLogRetention9E9120F4": {
+      "Properties": {
+        "LogGroupName": {
+          "Fn::Join": [
             "",
-            Array [
+            [
               "/aws/lambda/",
-              Object {
+              {
                 "Ref": "fnUpload490DB5AA",
               },
             ],
           ],
         },
         "RetentionInDays": 7,
-        "ServiceToken": Object {
-          "Fn::GetAtt": Array [
+        "ServiceToken": {
+          "Fn::GetAtt": [
             "LogRetentionaae0aa3c5b4d4f87b02d85b201efdd8aFD4BFC8A",
             "Arn",
           ],
@@ -543,27 +432,27 @@ Object {
       },
       "Type": "Custom::LogRetention",
     },
-    "fnUploadServiceRole07BB0591": Object {
-      "Properties": Object {
-        "AssumeRolePolicyDocument": Object {
-          "Statement": Array [
-            Object {
+    "fnUploadServiceRole07BB0591": {
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
               "Action": "sts:AssumeRole",
               "Effect": "Allow",
-              "Principal": Object {
+              "Principal": {
                 "Service": "lambda.amazonaws.com",
               },
             },
           ],
           "Version": "2012-10-17",
         },
-        "ManagedPolicyArns": Array [
-          Object {
-            "Fn::Join": Array [
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
               "",
-              Array [
+              [
                 "arn:",
-                Object {
+                {
                   "Ref": "AWS::Partition",
                 },
                 ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
@@ -575,22 +464,22 @@ Object {
       "Type": "AWS::IAM::Role",
     },
   },
-  "Rules": Object {
-    "CheckBootstrapVersion": Object {
-      "Assertions": Array [
-        Object {
-          "Assert": Object {
-            "Fn::Not": Array [
-              Object {
-                "Fn::Contains": Array [
-                  Array [
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
                     "1",
                     "2",
                     "3",
                     "4",
                     "5",
                   ],
-                  Object {
+                  {
                     "Ref": "BootstrapVersion",
                   },
                 ],
