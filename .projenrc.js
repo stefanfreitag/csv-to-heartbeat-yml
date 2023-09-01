@@ -3,7 +3,7 @@ const { Stability } = require('projen/lib/cdk');
 const { UpgradeDependenciesSchedule } = require('projen/lib/javascript');
 
 const project = new awscdk.AwsCdkTypeScriptApp({
-  cdkVersion: '2.55.1',
+  cdkVersion: '2.93.0',
   name: 'csv_to_heartbeat',
   authorEmail: 'stefan.freitag@udo.edu',
   authorName: 'Stefan Freitag',
@@ -15,6 +15,10 @@ const project = new awscdk.AwsCdkTypeScriptApp({
       schedule: UpgradeDependenciesSchedule.MONTHLY,
     },
   },
+  jestOptions: {
+    jestVersion: '^29',
+  },
+  typescriptVersion: '^5',
 });
 
 const common_exclude = ['data.csv', 'assets/vendor/*', '.history'];
