@@ -25,3 +25,4 @@ cdk.out/
 data.csv
 assets/vendor/*
 .history
+/.gitattributes
