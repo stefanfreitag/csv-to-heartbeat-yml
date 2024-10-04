@@ -3,7 +3,7 @@ const { Stability } = require('projen/lib/cdk');
 const { UpgradeDependenciesSchedule } = require('projen/lib/javascript');
 
 const project = new awscdk.AwsCdkTypeScriptApp({
-  cdkVersion: '2.93.0',
+  cdkVersion: '2.161.0',
   name: 'csv_to_heartbeat',
   authorEmail: 'stefan.freitag@udo.edu',
   authorName: 'Stefan Freitag',
