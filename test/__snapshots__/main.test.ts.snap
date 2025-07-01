@@ -347,6 +347,9 @@ exports[`Snapshot 1`] = `
         "apigwconverterPOSTACD3E997",
         "apigwconverterA3A5ED0D",
       ],
+      "Metadata": {
+        "aws:cdk:do-not-refactor": true,
+      },
       "Properties": {
         "Description": "Converts CSV data to Heartbeat yml files",
         "RestApiId": {
